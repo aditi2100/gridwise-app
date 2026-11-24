@@ -14,3 +14,5 @@ GridWise turns household energy meter exports into a clear, actionable energy st
 ## Run locally
 
 Open `index.html` in a browser. Use **Load sample data** or upload a CSV containing a numeric `kwh` column.
+
+Live demo: https://aditi2100.github.io/gridwise-app/
