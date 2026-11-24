@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GridWise turns household energy data into practical, lower-cost actions." />
+    <title>GridWise — Make every watt count</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar"><a class="brand" href="#"><span class="logo">g</span> gridwise</a><nav><a href="#insights">Insights</a><a href="#actions">Actions</a><button id="loadSample" class="outline">Load sample data</button></nav></header>
+    <main>
+      <section class="hero"><div><p class="eyebrow">Energy intelligence for ordinary homes</p><h1>Make every <span>watt</span> count.</h1><p class="lede">GridWise turns messy meter exports into a clear picture of where your energy—and money—is going, then suggests actions you can actually take.</p><div class="hero-actions"><button class="primary" id="heroSample">Explore sample home <span>→</span></button><label class="upload"><input type="file" id="csvInput" accept=".csv,text/csv" /> Upload a CSV</label></div></div><div class="hero-art"><div class="sun"></div><div class="house"><div class="roof"></div><div class="window w1"></div><div class="window w2"></div><div class="door"></div></div><div class="hill"></div><div class="art-caption">A clearer home energy story<br /><b>starts with your data.</b></div></div></section>
+      <section id="insights" class="dashboard"><div class="section-head"><div><p class="eyebrow">Your energy snapshot</p><h2 id="homeTitle">Sample home · October</h2></div><span class="live-pill"><i></i> Analysis ready</span></div>
+        <div class="metric-grid"><article class="metric"><span>Monthly usage</span><strong id="usageMetric">—</strong><small id="usageDelta">Upload data to begin</small></article><article class="metric"><span>Estimated cost</span><strong id="costMetric">—</strong><small id="costDelta">Based on local rate</small></article><article class="metric accent"><span>Biggest opportunity</span><strong id="opportunityMetric">—</strong><small id="opportunityDelta">We’ll find the pattern</small></article><article class="metric"><span>Carbon intensity</span><strong id="carbonMetric">—</strong><small>kg CO₂e this month</small></article></div>
+        <div class="charts"><article class="chart-card usage-chart"><div class="card-head"><div><h3>Daily usage</h3><p>kWh · last 30 days</p></div><span class="legend"><i></i> Actual <i class="forecast"></i> Forecast</span></div><div class="chart-wrap"><svg id="usageChart" viewBox="0 0 680 230" role="img" aria-label="Daily energy usage chart"></svg></div></article><article class="chart-card"><div class="card-head"><div><h3>Where energy goes</h3><p>Estimated appliance split</p></div></div><div id="breakdown" class="breakdown"></div></article></div>
+      </section>
+      <section id="actions" class="actions-section"><div class="section-head"><div><p class="eyebrow">The useful part</p><h2>Small actions, measured impact.</h2></div><p class="section-note">Recommendations are ranked by estimated savings, effort, and confidence—not just energy use.</p></div><div id="recommendations" class="recommendations"></div></section>
+      <section class="upload-banner"><div><p class="eyebrow">Bring your own data</p><h2>Already have a meter export?</h2><p>Drop in a CSV with <code>date,kwh</code> columns. Your file is processed in-browser and never uploaded.</p></div><label class="primary upload"><input type="file" id="csvInputBottom" accept=".csv,text/csv" /> Choose CSV file</label></section>
+    </main>
+    <footer><span>GridWise prototype · Local-first energy intelligence.</span><a href="https://github.com/aditi2100/gridwise">View source ↗</a></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
